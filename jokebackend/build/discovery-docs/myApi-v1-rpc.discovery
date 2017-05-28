@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/P_SGh-AC23Z74Fp30JUIVz_Nf-Q\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/w-ODSsUFRI3jslyCBJyFyzbm2tE\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -71,11 +71,11 @@
   }
  },
  "schemas": {
-  "MyBean": {
-   "id": "MyBean",
+  "JokeFactory": {
+   "id": "JokeFactory",
    "type": "object",
    "properties": {
-    "data": {
+    "jokes": {
      "type": "string"
     }
    }
@@ -84,17 +84,8 @@
  "methods": {
   "myApi.sayHi": {
    "id": "myApi.sayHi",
-   "parameters": {
-    "name": {
-     "type": "string",
-     "required": true
-    }
-   },
-   "parameterOrder": [
-    "name"
-   ],
    "returns": {
-    "$ref": "MyBean"
+    "$ref": "JokeFactory"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
