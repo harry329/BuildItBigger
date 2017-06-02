@@ -18,6 +18,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        paid {
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+        free {
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+    }
 }
 
 dependencies {
@@ -27,15 +35,16 @@ dependencies {
     })
     compile project(":jokelibrary")
     compile project(":androidjokedisplay")
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.google.android.gms:play-services-ads:9.8.0'
-    compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':jokebackend', configuration: 'android-endpoints')
+    // Optional -- Hamcrest library
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.8.0'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile 'com.google.api-client:google-api-client-android:1.20.0'
     compile 'com.google.http-client:google-http-client-gson:1.20.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     androidTestCompile 'com.android.support:support-annotations:25.3.1'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
-    // Optional -- Hamcrest library
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
 }

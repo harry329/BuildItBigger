@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.androidjokedisplay.JokeDisplayActivity;
 import com.example.harry.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             mJoke = result;
-            Intent jokeIntent = new Intent(context, JokeDisplayActivity.class);
+            Log.d("TEST",mJoke);
+            Intent jokeIntent = new Intent(context, FlavorActivity.class);
             jokeIntent.putExtra("JOKE", mJoke);
             startActivity(jokeIntent);
         }
